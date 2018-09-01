@@ -1,0 +1,48 @@
+1、进制类型
+var num = 10;
+var num = 012;
+var num = 0x123;
+js中八进制开头为0，十六进制开头为0x
+
+2、js中小数有bug，不要用小数来验证小数
+        var x = 0.1;
+        var y = 0.2;
+        var sum = x + y;
+        console.log(sum == 0.3);
+        输出 false
+原因：在JavaScript中的二进制的浮点数0.1和0.2并不是十分精确，在他们相加的结果并非正好等于0.3，而是一个比较接近的数字 0.30000000000000004 ，所以条件判断结果为 false
+解决办法：新建一个判断相等的函数，只要0.1+0.2的和减去0.3小于机器精度Number.EPSILON即可认为相等
+function numbersEqual(a,b){
+            return Math.abs(a-b) < Number.EPSILON;
+        }
+        var a = 0.1 + 0.2;
+        var b =0.3;
+        console.log(numbersEqual(a,b));//返回true
+
+3、验证是否是数字使用isNaN()函数，返回true说明不是数字，false是数字
+
+4、== 和 ===
+== 不严格,只要求值一样
+=== 严格，要求值和类型都一样
+!= 不严格的不等
+!==  严格的不等
+        var a = "5";
+        var b = 5 ;
+        console.log(a == b);//true
+        console.log(a === b);//false
+
+5、a++ 和 ++a 自身加一和参与运算的速度
+    var a = 1; var b = ++a + ++a; console.log(b);//2+3=5 
+    var a = 1; var b = a++ + ++a; console.log(b);//1+3=4    
+    var a = 1; var b = a++ + a++; console.log(b);//1+2=3    
+    var a = 1; var b = ++a + a++; console.log(b);//2+2=4
+
+6、三元表达式,所有用if else的语句都可以用三元表达式的语句表示
+    var x = 10;
+    var y = 20;
+    var result = x > y ? x : y;
+    console.log(result);
+
+    var year = parseInt(prompt("请输入年份！"));
+    var result = year % 4 == 0 && year % 100 != 0 || year % 400 ==0 ? "是闰年":"不是闰年";
+    console.log(result);  
