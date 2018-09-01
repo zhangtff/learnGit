@@ -46,3 +46,26 @@ function numbersEqual(a,b){
     var year = parseInt(prompt("请输入年份！"));
     var result = year % 4 == 0 && year % 100 != 0 || year % 400 ==0 ? "是闰年":"不是闰年";
     console.log(result);  
+
+7、for循环嵌套输出乘法口诀表
+document.write("<table border=1>")
+    for(var i=1;i<10;i++){
+        document.write("<tr>")
+        for(var j=1;j<=i;j++){
+            document.write("<td>"+i+"*"+j+"="+i*j+"</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+
+8、continue和break
+break:立即跳出整个循环，即循环结束，开始执行循环后面的内容（直接跳到大括号）
+continue:立即跳出当前循环，继续下一次循环（跳到i++的地方）
+
+9、无法用typeof判断字面量是否是数组，要用instanceof,JavaScript中instanceof运算符会返回一个 Boolean 值，指出对象是否是特定类的一个实例。
+    var arr = [1,2,3];
+    console.log(typeof arr);//返回object
+    console.log(arr instanceof Array);//返回true
+
+10、JS数组的下标初始值是0，使用构造函数创建数据的时候，括号内只写一个整数的话，代表数组的长度
+    var arr = new Array(8);

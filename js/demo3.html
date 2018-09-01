@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*js基础课程第三天课程练习
+    *关键字、数组和函数
+    */
+    //求整数1-100的累加值，要求跳过所有个位为3的数
+    // var sum = 0;
+    // for(var i=1;i<=100;i++){
+    //     if(i%10==3){
+    //         continue;
+    //     }else{
+    //         sum += i;
+    //     }
+    // }
+    // document.write(sum);
+    // var arr = [1,2,3];
+    // console.log(typeof arr);//返回object
+    // console.log(arr instanceof Array);//返回true
+    // var arr = new Array(8);
+    // console.log(arr);
+    function blarr(arr){
+        for(var i=0;i<arr.length;i++){
+            document.write(arr[i]+" ");
+        }
+        document.write("<br>");
+    }
+    // var arr =['red','green','yellow'];
+    // blarr(arr);
+    // arr.push("black");
+    // blarr(arr);
+    //去掉数组中多余的0，把其他的数据放在一个新的数组中
+    // var arr = [10,0,20,0,30,0,50];
+    // var arrnew = [];
+    // for(var i=0;i<arr.length;i++){
+    //     if(arr[i]!=0){
+    //         //arrnew.push(arr[i]);//第一种写法
+    //         arrnew[arrnew.length] = arr[i];//第二种写法
+    //     }
+    // }
+    // blarr(arrnew);
+    //反转数组,低效率写法
+    // var arr =[10,20,30,40,50];
+    // var arrnew = [];
+    // for(var i=arr.length-1;i>=0;i--){
+    //     arrnew[arrnew.length] = arr[i];
+    // }
+    // blarr(arrnew);
+    //反转数组,高效率写法，减少循环次数，考虑翻转的本质是位置交换
+    // var arr =[10,20,30,40,50];
+    // for(var i =0;i<arr.length/2;i++){
+    //     var temp = arr[i];
+    //     arr[i] = arr[arr.length-1-i];
+    //     arr[arr.length-1-i] = temp;
+    // }
+    // blarr(arr);
+    //冒泡排序,思路相邻对比，按规则交换位置,先写从小到大
+    var arr = [10,0,100,20,60,30];
+    for(var i=0;i<arr.length-1;i++){
+        for(var j=0;j<arr.length-1-i;j++){
+            if(arr[j] > arr[j+1]){
+                var temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] =temp;
+            }
+        }
+    }
+    blarr(arr);
+    </script>
+</body>
+</html>
