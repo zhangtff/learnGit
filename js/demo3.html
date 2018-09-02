@@ -62,18 +62,35 @@
     // }
     // blarr(arr);
     //冒泡排序,思路相邻对比，按规则交换位置,先写从小到大
-    var arr = [10,0,100,20,60,30];
-    for(var i=0;i<arr.length-1;i++){
-        for(var j=0;j<arr.length-1-i;j++){
-            if(arr[j] > arr[j+1]){
-                var temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] =temp;
-            }
+    // var arr = [10,0,100,20,60,30];
+    // for(var i=0;i<arr.length-1;i++){
+    //     for(var j=0;j<arr.length-1-i;j++){
+    //         if(arr[j] > arr[j+1]){
+    //             var temp = arr[j];
+    //             arr[j] = arr[j+1];
+    //             arr[j+1] =temp;
+    //         }
+    //     }
+    // }
+    // blarr(arr);
+    //写一个函数，返回一个数组的最大值，最小值和和
+    /**
+    *@param array
+    *@returns array
+    */
+    function getArrayMaxAndMinAndSum(array){
+        var min = array[0];
+        var max = array[0];
+        var sum = 0;
+        for(var i=0;i<array.length;i++){
+            sum += array[i];
+            min = array[i]>min?min:array[i];
+            max = array[i]>max?array[i]:max;
         }
+        var arr = [max,min,sum];
+        return arr;
     }
-    blarr(arr);
-
+    console.log(getArrayMaxAndMinAndSum([1,2,3,4,5]));
     
     </script>
 </body>
