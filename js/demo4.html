@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*js基础课程第五天课程练习
+    *学习对象
+    */
+    // var obj = new Object();
+    // obj.name = "姓名";
+    // obj.age = "28";
+    // obj.say = function (){
+    //     console.log("大家好，我的名字是"+this.name);
+    // }
+    // obj.say();
+    //工厂模式产生对象
+    // function creatObject(name,age){
+    //     var obj = new Object();//调用系统的构造函数创建对象
+    //     obj.name = name;
+    //     obj.age = age;
+    //     obj.sayHi = function (){
+    //         console.log("我的名字叫"+this.name+"，年龄是"+this.age);
+    //     }
+    //     return obj;
+    // }
+    // var obj1 = creatObject("张三","25");
+    // obj1.sayHi();
+    //自定义构造函数创建对象，自己定义一个构造函数
+    //函数和构造函数的区别：名字首字母是不是大写
+    // function Person(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sayHi = function(){
+    //         console.log("我叫："+this.name+"，年来是："+this.age);
+    //     }
+    // }
+    // var per1 = new Person("张亮","29");
+    // per1.sayHi();
+    // var per2 = new Person("田菲菲","28");
+    // per2.sayHi();
+    // console.log(per1 instanceof Person);
+    // console.log(per2 instanceof Person);
+    // //自定义狗的构造函数
+    // function Dog(name,age,sex){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.sex = sex;
+
+    // }
+    // var dog1 = new Dog();
+    // console.log(dog1 instanceof Person);
+    // console.log(dog1 instanceof Dog)
+    //自定义构造函数创建对象联系，创建个小猫对象，有颜色，体重，年龄，可以抓老鼠，可以打架
+    function Cat(color,weight,age){
+        this.color = color;
+        this.weight = weight;
+        this.age = age;
+        this.catch = function(){
+            console.log(this.weight+"KG重的"+this.color+"的"+this.age+"岁的小猫可以抓老鼠");
+        }
+        this.fight = function(){
+            console.log(this.weight+"KG重的"+this.color+"的"+this.age+"岁的小猫可以打架");
+        }
+    }
+    var cat1 = new Cat("黄色","4",2);
+    console.log(cat1.color);
+    cat1.catch();
+    cat1.fight();
+    var cat2 = new Cat("黑色","3",3);
+    console.log(cat2.color);
+    cat2.catch();
+    cat2.fight();
+    </script>
+</body>
+</html>

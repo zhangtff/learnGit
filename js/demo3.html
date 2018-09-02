@@ -78,20 +78,66 @@
     *@param array
     *@returns array
     */
-    function getArrayMaxAndMinAndSum(array){
-        var min = array[0];
-        var max = array[0];
-        var sum = 0;
-        for(var i=0;i<array.length;i++){
-            sum += array[i];
-            min = array[i]>min?min:array[i];
-            max = array[i]>max?array[i]:max;
-        }
-        var arr = [max,min,sum];
-        return arr;
+    // function getArrayMaxAndMinAndSum(array){
+    //     var min = array[0];
+    //     var max = array[0];
+    //     var sum = 0;
+    //     for(var i=0;i<array.length;i++){
+    //         sum += array[i];
+    //         min = array[i]>min?min:array[i];
+    //         max = array[i]>max?array[i]:max;
+    //     }
+    //     var arr = [max,min,sum];
+    //     return arr;
+    // }
+    // console.log(getArrayMaxAndMinAndSum([1,2,3,4,5]));
+    //不确定参数数量的函数使用arguments维数组
+    // function getSum(){
+    //     var sum = 0;
+    //     for(var i=0;i<arguments.length;i++){           
+    //         sum += arguments[i];
+    //     }
+    //     return sum;
+    // }
+    // console.log(getSum(1,2));
+    // console.log(getSum(1,2,3));
+    // console.log(getSum(1,2,3,4));
+    // console.log(getSum(1,2,3,4,5));
+    //匿名函数解决命名冲突，匿名函数只能用一下
+    // function f1(){
+    //     console.log("我是上面的函数");
+    // }
+    // (function (){
+    //     console.log("我是下面的函数");
+    // })();
+    // f1();
+    // var f2 = (function (){
+    //     console.log("我是f2匿名函数");
+    //     return 100;
+    // })();
+    // console.log(f2);
+    //函数作为参数调用
+    // function f1(fn){
+    //     fn();//函数调用
+    // }
+    // function f2(){
+    //     console.log("函数作为参数调用");
+    // }
+    // f1(f2);//函数作为参数时，不加大括号
+    //函数作为返回值
+    // function f1(){
+    //     return function (){
+    //         console.log("函数也可以作为返回值返回");
+    //     }
+    // }
+    // var a = f1();
+    // a();
+    //变量作用域，var声明的是全局变量，只有在函数内部var声明的变量才是局部变量
+    for(var i=0;i<5;i++){
+        var num = 10;
     }
-    console.log(getArrayMaxAndMinAndSum([1,2,3,4,5]));
-    
+    console.log(i);
+    console.log(num);
     </script>
 </body>
 </html>
