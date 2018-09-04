@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>document</title>
+</head>
+<body>
+    <script>
+        /**
+        *复习两种方式创建对象
+        *对象为学生，有名字，年龄和性别属性，会学习和逃课
+        */
+        //方法一：使用系统自带构造函数创建对象,工厂模式
+        function createStudent(name,age,sex){
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.sex = sex;
+            obj.study = function (){
+                document.write(this.name + "正在学习！<br>");
+            }
+            obj.fight = function(){
+                document.write(this.sex == "男"?"男生会打架<br>":"女生不会打架<br>");
+            }
+            return obj;
+        }
+        var s1 = createStudent("张一",18,"男");
+        s1.study();
+        s1.fight();
+        var s2 = createStudent("王二",19,"女");
+        s2.study();
+        s2.fight();
+        //方法二：自定义构造函数创建对象
+        function Student(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex =sex;
+            this.study;
+            this.study = function (){
+                document.write(this.name + "正在学习！<br>");
+            }
+            this.fight = function(){
+                document.write(this.sex == "男"?"男生会打架<br>":"女生不会打架<br>");
+            }
+        }
+        var s3 = new Student("张一",18,"男");
+        s3.study();
+        s3.fight();
+        var s4 = new Student("王二",19,"女");
+        s4.study();
+        s4.fight();
+        //方法三：字面量创建对象，一次性创建,键值对的形式
+        var dog = {
+            name:"abc",
+            sayhi:function (){
+                document.write("旺旺");
+            }
+        }
+        dog.sayhi();
+    </script>
+</body>
+</html>
