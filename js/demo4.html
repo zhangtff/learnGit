@@ -9,7 +9,7 @@
 <body>
     <script>
     /*js基础课程第五天课程练习
-    *学习对象
+    *学习对象创建的三种方式
     */
     // var obj = new Object();
     // obj.name = "姓名";
@@ -56,25 +56,44 @@
     // console.log(dog1 instanceof Person);
     // console.log(dog1 instanceof Dog)
     //自定义构造函数创建对象联系，创建个小猫对象，有颜色，体重，年龄，可以抓老鼠，可以打架
-    function Cat(color,weight,age){
-        this.color = color;
-        this.weight = weight;
-        this.age = age;
-        this.catch = function(){
-            console.log(this.weight+"KG重的"+this.color+"的"+this.age+"岁的小猫可以抓老鼠");
-        }
-        this.fight = function(){
-            console.log(this.weight+"KG重的"+this.color+"的"+this.age+"岁的小猫可以打架");
-        }
+    // function Cat(color,weight,age){
+    //     this.color = color;
+    //     this.weight = weight;
+    //     this.age = age;
+    //     this.catch = function(){
+    //         console.log(this.weight+"KG重的"+this.color+"的"+this.age+"岁的小猫可以抓老鼠");
+    //     }
+    //     this.fight = function(){
+    //         console.log(this.weight+"KG重的"+this.color+"的"+this.age+"岁的小猫可以打架");
+    //     }
+    // }
+    // var cat1 = new Cat("黄色","4",2);
+    // console.log(cat1.color);
+    // cat1.catch();
+    // cat1.fight();
+    // var cat2 = new Cat("黑色","3",3);
+    // console.log(cat2.color);
+    // cat2.catch();
+    // cat2.fight();
+    //字面量方式创建对象,此方式存在缺陷，只能创造一次性的对象
+    // var obj = {
+    //     name:"小明",
+    //     age:20,
+    //     sayHi:function(){
+    //         console.log("我是"+obj.name);
+    //     }
+    // };
+    // obj.sayHi();
+    //json格式数据操作，json也是一个对象，数据都是成对的，键和值都用双引号括起来
+    var json = {
+        "name":"小明",
+        "age":"10",
+        "sex":"男"
     }
-    var cat1 = new Cat("黄色","4",2);
-    console.log(cat1.color);
-    cat1.catch();
-    cat1.fight();
-    var cat2 = new Cat("黑色","3",3);
-    console.log(cat2.color);
-    cat2.catch();
-    cat2.fight();
+    for(var key in json){
+        document.write(json[key]);
+    }
+    console.log(typeof json);//
     </script>
 </body>
 </html>

@@ -92,3 +92,14 @@ continue:立即跳出当前循环，继续下一次循环（跳到i++的地方�
 
 13、变量的作用域
 var声明的是全局变量，只有在函数内部var声明的变量才是局部变量
+
+14、遍历json数据写法
+    //json格式数组操作，json也是一个对象，数据都是成对的，键和值都用双引号括起来
+    var json = {
+        "name":"小明",
+        "age":"10",
+        "sex":"男"
+    }
+    for(var key in json){
+        document.write(json[key]);
+    }
